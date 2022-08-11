@@ -87,7 +87,7 @@ def list_employee():
 
 
 #GET, return data of expected employee from his/her ID
-@app.get('/get-employee-ID')
+@app.get('/get-employee-from-username')
 def get_employee_from_username(employee_username: str = "" ):
     if len(EmployeeData):
         for idx, obj in enumerate(EmployeeData):
@@ -98,13 +98,13 @@ def get_employee_from_username(employee_username: str = "" ):
         raise NoEmployee(username = employee_username)
 
 #GET, return the best available employee username with highest rating
-@app.get('/get-best-available')
-def get_best_available():
+@app.get('/get-best-available-employee')
+def get_best_available_employee():
     username = None
     current_rate = -1
     for idx, obj in enumerate(EmployeeData):
         if(obj["available_now"] and obj["rating"] > current_rate):
-            current_rate = obj["current_rate"]
+            current_rate = obj["rating"]
             username = obj["username"]
     
     if(username != None and current_rate > -1):
@@ -113,8 +113,8 @@ def get_best_available():
         raise HTTPException(403, "No Employee Available!")
 
 #POST, update an employee's availability from his/her username
-@app.post('/Update-Available')
-def update_available(employee_username: str = "", is_available : bool = True):
+@app.post('/Update-Availability')
+def update_availability(employee_username: str = "", is_available : bool = True):
     if len(EmployeeData):
         for idx, obj in enumerate(EmployeeData):
             if(obj["username"] == employee_username):

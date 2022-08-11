@@ -1,0 +1,23 @@
+[
+    {
+        "username": "Jason Momoa",
+        "jobdesk": "Aquaman, Movie Star",
+        "rating": 10.0,
+        "available_now": true,
+        "id": "4e6b6152b04b4675a4aeef72dc97329c"
+    },
+    {
+        "username": "Steve Jobs",
+        "jobdesk": "Smart guy, CEO",
+        "rating": 10000.0,
+        "available_now": false,
+        "id": "730e8de9cc214e33814ebb8f4a235418"
+    },
+    {
+        "username": "Elon Musk",
+        "jobdesk": "CEO",
+        "rating": 9999.0,
+        "available_now": true,
+        "id": "4570205ffd6e406f9bd2f0b290c39346"
+    }
+]
