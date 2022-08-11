@@ -13,6 +13,14 @@
     * **Step 3: Test your API using Swagger UI**
         * http://127.0.0.1:8000/docs
 
+
+## JSON Object Data Structure
+### Fields
+* username:str = Employee's username
+* jobdesk: Union[str, None] = Employee's current job, None means a trainee, no job yet
+* rating: float = perfomance rating, the higher the better
+* available_now: bool = whether available or not at the moment, True means available
+
 ## API Documentation
 ### GET Methods
     * > /list-employee
@@ -26,3 +34,5 @@
         * Update registered employees availability, set to true for available
     * > /upload
         * Upload a file to the server
+
+
